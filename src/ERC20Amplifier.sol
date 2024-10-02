@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 event Deposit(address indexed sender, uint256 originalTokenAmount);
+
 event Withdraw(address indexed receiver, uint256 originalTokenAmount);
 
 contract ERC20Amplifier is ERC20 {
@@ -18,7 +19,7 @@ contract ERC20Amplifier is ERC20 {
         originalToken = ERC20(_originalToken);
         amplification = _amplification;
     }
-    
+
     function deposit(uint256 _originalTokenAmount) public {
         require(_originalTokenAmount > 0, "!gt0");
 

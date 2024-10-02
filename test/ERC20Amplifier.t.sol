@@ -22,8 +22,8 @@ contract ERC20AmplifierTest is Test {
         token = new TestERC20("Token", "TKN");
         token.mint(address(this), 1000);
 
-        amplifier = new ERC20Amplifier(address(token), 10**18, "Amplifier", "AMP");
-        assertEq(amplifier.amplification(), 10**18);
+        amplifier = new ERC20Amplifier(address(token), 10 ** 18, "Amplifier", "AMP");
+        assertEq(amplifier.amplification(), 10 ** 18);
         assertEq(amplifier.totalSupply(), 0);
         assertEq(amplifier.name(), "Amplifier");
         assertEq(amplifier.symbol(), "AMP");
